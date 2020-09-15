@@ -1,7 +1,18 @@
-<h1>
-  {{hour}} : {{minutes}} : {{seconds}} : {{milliSecond}}
-</h1>
+<div fxLayout="column" class="container" fxLayoutAlign="space-between center">
+  <div>
+    <span class="header">StopWatch</span>
+  </div>
+  <div>
+    <span class="numbers">Hr: Min : Sec</span><br>
 
-<button (click)="startTime(0)" [disabled]="isStopped">Start</button>
-<button (click)="stopTime(0)" [disabled]="!isStopped">Stop</button>
-
+  </div>
+  <div>
+    <span class="numbers">{{ hour }} : {{ minutes }} : {{ seconds }}</span>
+  </div>
+  <div>
+    <button class="btn-space" (click)="startTime(milliSecond)">
+      {{ isStopped ? "Stop" : "Start" }}
+    </button>
+    <button class="btn-space"  (click)="stopTime(0)" [disabled]="!isStopped">Reset</button>
+  </div>
+</div>

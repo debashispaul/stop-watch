@@ -27,15 +27,16 @@ export class AppComponent {
   }
 
   public startTime(counter: number): void {
-    this.isStopped = true;
+    this.isStopped = !this.isStopped;
     this.increaseTime(counter);
   }
 
   public stopTime(): void {
+    this.isStopped = false;
     this.milliSecond = 0;
     this.seconds = 0;
     this.minutes = 0;
     this.hour = 0;
-    this.isStopped = false;
+
   }
 }
